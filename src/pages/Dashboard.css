@@ -96,6 +96,16 @@
   padding: var(--padding-xs) var(--padding-13xl);
   gap: var(--gap-base);
 }
+@media screen and (min-width: 1750px) {
+  .dashboard-header {
+    width: 100%;
+    padding: var(--padding-xs) 12rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
 .overview {
   position: relative;
   line-height: 28px;
@@ -1005,6 +1015,9 @@
   justify-content: center;
   align-items: center;
 }
+.transactions-this-month-parent > .overview {
+  align-self: flex-start;
+}
 .template-3 {
   border-radius: var(--br-5xs);
   background-color: var(--black-100);
@@ -1015,8 +1028,7 @@
   font-size: var(--caption-regular-size);
   font-family: var(--caption-regular1);
 }
-.frame-group,
-.transactions-this-month-parent {
+.frame-group {
   align-items: flex-start;
 }
 .transactions-this-month-parent {
