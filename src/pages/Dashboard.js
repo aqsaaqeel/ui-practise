@@ -33,7 +33,7 @@ const Dashboard = () => {
                     <div className="online-orders">Online orders</div>
                     <img className="outlined-settings" alt="" />
                   </div>
-                  <div className="div">231</div>
+                  <div className="div">232</div>
                 </div>
               </div>
             </div>
