@@ -44,7 +44,7 @@ const Dashboard = () => {
                     <div className="online-orders">Amount received</div>
                     <img className="outlined-settings" alt="" />
                   </div>
-                  <div className="div">₹23,92,312.19</div>
+                  <div className="div">₹23,91,312.19</div>
                 </div>
               </div>
             </div>
