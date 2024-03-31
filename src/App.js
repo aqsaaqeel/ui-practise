@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box } from "./components/box/Box";
 import { Controls } from "./components/controls/Controls";
-import {SuccessBox} from "./components/success-box/SuccessBox";
+import { SuccessBox } from "./components/success-box/SuccessBox";
 import "./App.css";
 
 function App() {
@@ -50,7 +50,7 @@ function App() {
   // Function to check if the ball is inside the success box
   const checkSuccess = (position) => {
     // Define the position and dimensions of the SuccessBox
-    const successBoxPosition = { x: 675, y: 30 };
+    const successBoxPosition = { x: 375, y: 30 };
     const successBoxDimensions = { width: 52, height: 52 };
 
     const isInsideSuccessBox =
@@ -70,6 +70,7 @@ function App() {
     <div className="App">
       <div className="individual-container">
         <Box ballPosition={ballPosition[0]} />
+        <SuccessBox successMessage={successMessage} />
       </div>
       <div className="individual-container">
         <Box ballPosition={ballPosition[1]} />
@@ -83,7 +84,6 @@ function App() {
         <div style={{ height: "10px", marginTop: "2rem" }}></div>
         <Controls boxIndex={2} moveHandler={moveBallHandler} />
       </div>
-      <SuccessBox successMessage={successMessage} />
     </div>
   );
 }
