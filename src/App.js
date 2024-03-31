@@ -37,10 +37,16 @@ function App() {
         default:
           break;
       }
-      checkSuccess(newPositions[boxIndex]);
+  
+      // Check success only if the topmost ball moves
+      if (boxIndex === 0) {
+        checkSuccess(newPositions[0]);
+      }
+      
       return newPositions;
     });
   };
+  
 
   const checkSuccess = (ballPosition) => {
     const successBox = { x: 675, y: 30, width: 52, height: 52 }; // Assuming position and dimensions of the SuccessBox
