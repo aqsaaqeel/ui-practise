@@ -1,0 +1,8 @@
+.box-container {
+  width: 40rem;
+  height: 10rem;
+  background-color: yellow;
+  border-radius: 5px;
+
+  position: relative;
+}

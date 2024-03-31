@@ -1,0 +1,20 @@
+.controls{
+    display: flex;
+    width: 10rem;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+    position: absolute;
+}
+.horizontal-controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.hidden-button{
+    visibility: hidden;
+}
+button{
+    width: 2rem;
+}

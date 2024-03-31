@@ -1,0 +1,32 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .individual-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+  }
+  
+  .controls {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .horizontal-controls {
+    display: flex;
+  }
+  
+  
+  .box-container {
+    position: relative;
+  }
+  
+
+  
