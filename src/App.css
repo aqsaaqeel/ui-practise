@@ -36,4 +36,12 @@
     right: 150px;
     top:10px;
 }
+.green-background {
+    position: absolute;
+    background-color: green;
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    top: calc(100% + 10px); /* Position it 10px below the uppermost box-container */
+    left: calc(100% + 10px); /* Position it 10px to the right of the uppermost box-container */
+  }
   

@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Box } from "./components/box/Box";
 import { Controls } from "./components/controls/Controls";
-import { SuccessBox } from "./components/success-box/SuccessBox"; 
+import {SuccessBox} from "./components/success-box/SuccessBox";
 import "./App.css";
-
 
 function App() {
   const getRandomPosition = () => ({
-    x: Math.floor(Math.random() * 400), 
-    y: Math.floor(Math.random() * 100) 
+    x: Math.floor(Math.random() * 400),
+    y: Math.floor(Math.random() * 100)
   });
 
   const [ballPosition, setBallPosition] = useState([
@@ -16,6 +15,7 @@ function App() {
     getRandomPosition(),
     getRandomPosition()
   ]);
+
   const [successMessage, setSuccessMessage] = useState('');
 
   const moveBallHandler = (boxIndex, movement) => {
@@ -37,26 +37,29 @@ function App() {
         default:
           break;
       }
-  
+
       // Check success only if the topmost ball moves
       if (boxIndex === 0) {
         checkSuccess(newPositions[0]);
       }
-      
+
       return newPositions;
     });
   };
-  
 
-  const checkSuccess = (ballPosition) => {
-    const successBox = { x: 675, y: 30, width: 52, height: 52 }; // Assuming position and dimensions of the SuccessBox
+  // Function to check if the ball is inside the success box
+  const checkSuccess = (position) => {
+    // Define the position and dimensions of the SuccessBox
+    const successBoxPosition = { x: 675, y: 30 };
+    const successBoxDimensions = { width: 52, height: 52 };
 
-    if (
-      ballPosition.x >= successBox.x &&
-      ballPosition.x <= successBox.x + successBox.width &&
-      ballPosition.y >= successBox.y &&
-      ballPosition.y <= successBox.y + successBox.height
-    ) {
+    const isInsideSuccessBox =
+      position.x >= successBoxPosition.x &&
+      position.x <= successBoxPosition.x + successBoxDimensions.width &&
+      position.y >= successBoxPosition.y &&
+      position.y <= successBoxPosition.y + successBoxDimensions.height;
+
+    if (isInsideSuccessBox) {
       setSuccessMessage('Success!');
     } else {
       setSuccessMessage('');
@@ -66,9 +69,7 @@ function App() {
   return (
     <div className="App">
       <div className="individual-container">
-        <Box ballPosition={ballPosition[0]}/>
-        <SuccessBox  />
-        {successMessage && <div>{successMessage}<img className="confetti-picture" src="./confetti.png" alt="confetti"/></div>}
+        <Box ballPosition={ballPosition[0]} />
       </div>
       <div className="individual-container">
         <Box ballPosition={ballPosition[1]} />
@@ -82,6 +83,7 @@ function App() {
         <div style={{ height: "10px", marginTop: "2rem" }}></div>
         <Controls boxIndex={2} moveHandler={moveBallHandler} />
       </div>
+      <SuccessBox successMessage={successMessage} />
     </div>
   );
 }
