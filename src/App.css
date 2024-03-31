@@ -28,5 +28,12 @@
     position: relative;
   }
   
-
+.confetti-picture{
+    position: absolute;
+    z-index: 2;
+    width: 7rem;
+    height: 7rem;
+    right: 150px;
+    top:10px;
+}
   

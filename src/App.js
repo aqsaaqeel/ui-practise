@@ -4,6 +4,7 @@ import { Controls } from "./components/controls/Controls";
 import { SuccessBox } from "./components/success-box/SuccessBox"; 
 import "./App.css";
 
+
 function App() {
   const getRandomPosition = () => ({
     x: Math.floor(Math.random() * 400), 
@@ -61,7 +62,7 @@ function App() {
       <div className="individual-container">
         <Box ballPosition={ballPosition[0]}/>
         <SuccessBox  />
-        {successMessage && <div>{successMessage}</div>}
+        {successMessage && <div>{successMessage}<img className="confetti-picture" src="./confetti.png" alt="confetti"/></div>}
       </div>
       <div className="individual-container">
         <Box ballPosition={ballPosition[1]} />
